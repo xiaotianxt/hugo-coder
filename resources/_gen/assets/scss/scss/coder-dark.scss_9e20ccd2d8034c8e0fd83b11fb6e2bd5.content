@@ -40,10 +40,11 @@ body.colorscheme-dark {
   body.colorscheme-dark code {
     background-color: #424242;
     color: #dadada; }
-  body.colorscheme-dark .highlight pre {
-    background-color: #424242;
-    color: #dadada; }
-  body.colorscheme-dark :not(.highlight) > pre code {
+  body.colorscheme-dark .highlight pre[style*=background-color]:not([style^=color]), body.colorscheme-dark .highlight pre[style*=background-color]:not([style*=\-color]) {
+    color: #212121; }
+  body.colorscheme-dark .highlight pre[style^=color]:not([style*=background-color]), body.colorscheme-dark .highlight pre[style*=\-color]:not([style*=background-color]) {
+    background-color: #e0e0e0; }
+  body.colorscheme-dark pre code {
     background-color: inherit;
     color: inherit; }
   body.colorscheme-dark blockquote {
@@ -110,10 +111,11 @@ body.colorscheme-dark {
     body.colorscheme-auto code {
       background-color: #424242;
       color: #dadada; }
-    body.colorscheme-auto .highlight pre {
-      background-color: #424242;
-      color: #dadada; }
-    body.colorscheme-auto :not(.highlight) > pre code {
+    body.colorscheme-auto .highlight pre[style*=background-color]:not([style^=color]), body.colorscheme-auto .highlight pre[style*=background-color]:not([style*=\-color]) {
+      color: #212121; }
+    body.colorscheme-auto .highlight pre[style^=color]:not([style*=background-color]), body.colorscheme-auto .highlight pre[style*=\-color]:not([style*=background-color]) {
+      background-color: #e0e0e0; }
+    body.colorscheme-auto pre code {
       background-color: inherit;
       color: inherit; }
     body.colorscheme-auto blockquote {

@@ -38,15 +38,26 @@
     color: $fg-color-dark;
   }
 
-  // fix color schemes which do not explicitly set fg-color
+  // fix the color scheme when background-color and color are not all specified
   .highlight {
     pre {
-      background-color: $alt-bg-color-dark;
-      color: $fg-color-dark;
+      // only `background-color` is specified
+      // the color is not ready for dark, fallback to light
+      &[style*=background-color]:not([style^=color]),
+      &[style*=background-color]:not([style*=\-color]) {
+        color: $fg-color;
+      }
+
+      // only `color` is specified
+      // the background-color is not ready for dark, fallback to light
+      &[style^=color]:not([style*=background-color]),
+      &[style*=\-color]:not([style*=background-color]) {
+        background-color: $alt-bg-color;
+      }
     }
   }
 
-  :not(.highlight) > pre {
+  pre {
     code {
       background-color: inherit;
       color: inherit;
