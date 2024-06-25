@@ -1,3 +1,7 @@
+@view-transition {
+	navigation: auto;
+}
+
 .content {
   flex: 1;
   display: flex;
@@ -241,5 +245,14 @@
         font-size: 2.8rem;
       }
     }
+  }
+}
+
+.post-content {
+  counter-reset: csl-left-margin;
+
+  .csl-left-margin::before {
+    content: "[" counter(csl-left-margin) "]\0009";
+    counter-increment: csl-left-margin;
   }
 }
